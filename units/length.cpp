@@ -12,7 +12,7 @@ Length Length::create_from_meters(double value) {
 }
 
 Length Length::create_from_feet(double value) {
-    return Length(value * 0.33);
+    return Length(value * foot_in_meters);
 }
 
 double Length::value_in_meters() {
@@ -21,5 +21,9 @@ double Length::value_in_meters() {
 
 Length Length::operator-(const Length &right) {
     return Length(this->_value - right._value);
+}
+
+double Length::value_in_feet() {
+    return _value / foot_in_meters;
 }
 
