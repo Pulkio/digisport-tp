@@ -3,7 +3,7 @@
 
 Length::~Length() {}
 
-Length Length::operator+(const Length & right) {
+Length Length::operator+(const Length & right) const {
     return Length(this->_value + right._value);
 }
 
@@ -19,7 +19,7 @@ double Length::value_in_meters() {
     return _value;
 }
 
-Length Length::operator-(const Length &right) {
+Length Length::operator-(const Length &right) const {
     return Length(this->_value - right._value);
 }
 

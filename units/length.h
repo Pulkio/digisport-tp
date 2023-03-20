@@ -1,13 +1,13 @@
 class Length {
 public:
 
-    double value_in_meters();
+    virtual double value_in_meters();
 
-    double value_in_feet();
+    virtual double value_in_feet();
 
-    virtual Length operator+(const Length &right);
+    virtual Length operator+(const Length &right) const;
 
-    virtual Length operator-(const Length &right);
+    virtual Length operator-(const Length &right) const;
 
     virtual ~Length();
 
@@ -19,7 +19,7 @@ private:
 
     double _value;
 
-    Length(double value) : _value(value) {};
+    Length(double value = 0.0) : _value(value) {};
 
-    constexpr static const double foot_in_meters = 0.33;
+    constexpr static const double foot_in_meters = 0.3048;
 };

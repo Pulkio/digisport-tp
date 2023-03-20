@@ -24,5 +24,5 @@ TEST(Units, Addition) {
 TEST(Units, InitFeet) {
     Length l1(Length::create_from_feet(10.0));
 
-    ASSERT_DOUBLE_EQ(3.3, l1.value_in_meters());
+    ASSERT_DOUBLE_EQ(3.048, l1.value_in_meters());
 }
