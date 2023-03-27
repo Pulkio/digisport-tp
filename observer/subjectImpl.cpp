@@ -16,8 +16,10 @@ std::string SubjectImpl::getValue() const {
 
 // Définit la valeur courante et notifie les observateurs
 void SubjectImpl::setValue(std::string value) {
-    this->value = value;
-    notifyObservers();
+    if (!value.empty()) {
+        this->value = value;
+        notifyObservers();
+    }
 }
 
 // Vérifie si l'observateur est déjà enregistré auprès du sujet
@@ -34,6 +36,7 @@ bool SubjectImpl::isRegistered(const Observer* o) const {
 void SubjectImpl::registerObserver(Observer* o) {
     if (!isRegistered(o)) {
         observers.push_back(o);
+        o->update(this);
     }
 }
 

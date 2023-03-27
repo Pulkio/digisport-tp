@@ -12,6 +12,13 @@ ObserverImpl::~ObserverImpl() {
 
 // Fonction appelée par le sujet observé pour notifier tous les observateurs de la mise à jour de la valeur
 void ObserverImpl::update(Subject* s) {
-    // Afficher la nouvelle valeur du sujet observé
-    std::cout << "Value changed to: " << s->getValue() << std::endl;
+    // Afficher et stocke la nouvelle valeur du sujet observé
+    this->obsValue = s->getValue();
+    std::cout << "Value changed to: " << this->obsValue << std::endl;
 }
+
+// Retourne la valeur de l'observer
+std::string ObserverImpl::getObsValue() {
+    return this->obsValue;
+}
+

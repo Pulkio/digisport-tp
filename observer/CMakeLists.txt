@@ -14,7 +14,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(observer observertest.cpp subject.cpp subject.h observer.cpp observer.h)
+add_executable(observer observertest.cpp  subject.h  observer.h subjectImpl.cpp subjectImpl.h observerImpl.cpp observerImpl.h)
 target_link_libraries(observer gtest_main)
 add_test(NAME units_test COMMAND units)
 

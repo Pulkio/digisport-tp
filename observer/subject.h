@@ -4,7 +4,7 @@
 #include <string>
 #include <list>
 
-// Forward declaration de la classe Observer pour éviter des problèmes d'inclusion circulaire
+// Déclaration anticipée de la classe Observer pour éviter une dépendance cyclique
 class Observer;
 
 // Classe abstraite Subject
